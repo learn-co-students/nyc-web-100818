@@ -3,7 +3,7 @@ Intro to Object Orientation
 
 aka: Object Oriented Programming (OOP)
 
-## SWBATs
+## SWBATs (Students Will Be Able Tos)
 
 * Define `object` in programming domain
 * Explain the concept of sending messages
@@ -13,8 +13,10 @@ aka: Object Oriented Programming (OOP)
 * Create instance methods
 * Call methods on the implicit or explicit `self`
 * Define attribute readers and writers using `attr_` macros
+
 * Get more practice with array compositions (`each`, `map`, `select`/`filter`)
 * Explain the need for variable scope and why it's important to not utilize global variables
+DON'T USE GLOBAL VAIRABLES
 
 ## Outline / Objectives
 
