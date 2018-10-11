@@ -13,7 +13,7 @@ Object Oriented Relationships
   * One object belongs to another object
 * Practice passing custom objects as arguments to methods
 * Demonstrate Single Source of Truth
-* Infer type of method \(class or instance\) through naming conventions
+* Infer type of method (class or instance) through naming conventions
 
 ### Outline
 
@@ -21,8 +21,27 @@ Object Oriented Relationships
   * we created classes
   * we created instances of classes
   * we created instance and class methods
+  * we used `attr_` macros for getters and setters
   * we looked at `self`
 * Learn about object oriented relationships driven via _deliverables_!
+  * Define terminology
+  * Introduce new concepts
+  * Convert those concepts to code
+  * Test!
+
+### Define
+
+* Model
+* Domain
+* Domain modeling
+* Relationships
+  * One to many relationship
+  * Many to many relationship
+
+_Why do we care so much about codifying and being really specific about the terminology of has-many/belongs-to?_ The terms are very powerful because we can use the same idea to describe relationships across many different types of domains. The relationship between artist and song, is the same as book and author, user and tweets, etc.
+
+* Schema
+* Single Source of Truth
 
 ### Deliverables
 
@@ -30,7 +49,7 @@ Object Oriented Relationships
   * `#initialize` which takes a username and have
   * a reader method for the username
   * `#tweets` that returns an array of Tweet instances
-  * `#post_tweet` that takse a message, creates a new tweet, and adds it to the user's tweet collection
+  * `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
 * Create a Tweet class. The class should have these methods:
   * `Tweet#message` that returns a string
   * `Tweet#user` that returns an instance of the user class
@@ -63,8 +82,7 @@ Based off of the _one to many_ code, we're going to add the ability to like a tw
 ### The world so far
 
 * Create a User class. The class should have these methods:
-  * `#initialize` which takes a username and have
-  * a reader method for the username
+  * `#initialize` which takes a username and have a reader method for the username
   * `#tweets` that returns an array of Tweet instances
   * `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
 * Create a Tweet class. The class should have these methods:
