@@ -24,9 +24,20 @@ Intro to Active Record
 
 1. create model
 2. create migration
+  -> tell ActiveRecord how to change the database to reflect
+  -> what you want the model to look like
 3. run migration
 4. check your schema
 5. test!
+
+## ideas?
+
+Halloween
+
+- costume <--
+- candy <--
+- homes
+- trick_or_treaters
 
 ## Lecture Notes
 

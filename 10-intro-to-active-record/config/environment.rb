@@ -2,7 +2,7 @@ require 'bundler/setup'
 Bundler.require
 
 ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
+  adapter: 'sqlite3', # mysql, postgres, microsoft sql, oracle
   database: "db/development.sqlite"
 )
 
