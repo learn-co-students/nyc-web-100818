@@ -13,20 +13,78 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 
+  one to many
+
+  books
+  id | title                                     | author_id
+  1  | 'Harry Potter'                            | 1
+  2  | 'Enders Game'                             | 2
+  3  | 'Hitchhikers Guide to the Galaxy'         | 3
+  4  | 'Fantastic Beasts and where to find them' | 1
+
+  authors
+  id | first_name  | last_name
+  1  | JK          | Rowling 2
+  2  | Orsen Scott | Card
+  3  | Douglas     | Adams
+
   Q: Write the SQL to find all books written by a certain author given that author's id
 
   ```SQL
+  SELECT *
+  FROM books
+  WHERE author_id = 1
 
+
+  SELECT *
+  FROM books
+  JOIN authors
+  ON authors.id = books.author_id
+  WHERE authors.first_name = 'JK' AND authors.last_name = 'Rowling 2'
   ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
+  books >-----< authors
+
+  books
+  id | title                                     
+  1  | 'Harry Potter'                            
+  2  | 'Enders Game'                             
+  3  | 'Hitchhikers Guide to the Galaxy'         
+  4  | 'Fantastic Beasts and where to find them'
+
+  JOIN TABLE
+  books_authors
+  id | author_id | book_id
+  1  | 1         | 1
+  2  | 1         | 4
+  3  | 2         | 1
+
+  authors
+  id | first_name  | last_name
+  1  | JK          | Rowling 2  
+  2  | Orsen Scott | Card
+  3  | Douglas     | Adams
+
+  Query - Q in SQL
+  executing some command to do something
+  Asking some question to the database.
+  Commands -
+
   - What type of relationship is this?
+    - many to many
 
   Q. Write the SQL to find all books written by certain author given their name
 
   ``` SQL
-
+  SELECT *
+  FROM books
+  JOIN books_authors
+  ON books.id = books_authors.book_id
+  JOIN authors
+  ON authors.id = books_authors.author_id
+  WHERE authors.first_name = 'JK' AND authors.last_name = 'Rowling 2'
   ```
 
 3. Squirrels have Nests in Trees -- Build table
@@ -68,6 +126,21 @@ Q: Write the SQL to find all Squirrels in a "christmas tree"
 
 What are the four ways we can interact with Data?
 
+Create
+- create, insert
+- Whatever.new
+
+Read
+- Select
+- getter, enumerator (select)
+
+Update
+- update
+- setters
+
+Delete
+- drop, delete
+- clear, pop, delete, destroy
 
 ### Active Record Pattern
 
