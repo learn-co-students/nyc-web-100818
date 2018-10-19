@@ -13,6 +13,17 @@ Active Record Associations
     * Association Macros
     * Rake tasks
 
+candy
+costume
+one to many
+candy bag has many candies
+candy belongs to a candy bag
+
+many to many
+treaters - costumes
+JOIN TABLE
+- TreatersCostumes
+
 ## Overview
 
 - Active Record - How to use it!
