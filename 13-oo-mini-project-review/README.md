@@ -21,7 +21,12 @@ OO Review => Active Record
 
 ## OO Recipes Mini Project
 
-In this project, we will be practicing object relationships in Ruby, with a particular emphasis on the has-many-through relationship.  We will be building out a domain model in which a User has a collection of RecipeCards. Each RecipeCard will store information about a Recipe a User would like to save, creating the relationship of a User having many Recipes through RecipeCards. A single Recipe can also belong to many Users.  A Recipe also has many Ingredients, while a single Ingredient can be found in many Recipes.  There are Ingredients that some Users may be allergic to.  Read through the deliverables below to begin building out the following six classes and to figure out additional information about their relationships.  (Note - a `#` symbol represents an instance method, while a `.` represents a class method.)  You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process.  If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.  
+In this project, we will be practicing object relationships in Ruby, with a particular emphasis on the has-many-through relationship.  
+
+We will be building out a domain model in which a User has a collection of RecipeCards. Each RecipeCard will store information about a Recipe a User would like to save, creating the relationship of a User having many Recipes through RecipeCards. A single Recipe can also belong to many Users.  A Recipe also has many Ingredients, while a single Ingredient can be found in many Recipes.  There are Ingredients that some Users may be allergic to.  
+
+
+Read through the deliverables below to begin building out the following six classes and to figure out additional information about their relationships.  (Note - a `#` symbol represents an instance method, while a `.` represents a class method.)  You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process.  If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.  
 
 ## Testing
 

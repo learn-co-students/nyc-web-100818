@@ -9,3 +9,9 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 require_all 'app'
+
+# create a table => class => model
+# create migration
+# run migrate
+# check that schema!!!!!
+# test
