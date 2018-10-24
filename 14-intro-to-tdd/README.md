@@ -3,7 +3,7 @@ Intro to Test Driven Development
 
 ## SWBAT
 
-* Integrate testing into their current projects using RSpec
+* Integrate testing into their  projects using RSpec
 * Set up testing in a new project
 * Define Test-Driven development
 * Describe what a testing framework is and what the RSpec framework does
@@ -64,7 +64,7 @@ Red, Green, Refactor cycle
 Edge Cases:
 - numbers
 - non-string input
-- symbols
+- symbols <=== emoji
 - punctuation
   - a man a plan a canal panama
 - case sensitivity
