@@ -1,0 +1,9 @@
+<h1> EDIT. THAT. CCCCCCANDDDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</h1>
+
+
+<form action="/candies/<%= @candy.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="candy[name]" value="<%= @candy.name %>">
+  <input type="text" name="candy[tasty]" value="<%= @candy.tasty %>">
+  <input type="submit">
+</form>
