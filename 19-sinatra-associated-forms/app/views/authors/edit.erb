@@ -1,0 +1,8 @@
+<h1> EDITORRRRZZZ</h1>
+
+<form class="" action="/authors/<%= @author.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="coolio[name]" value="<%= @author.name %>">
+  <input type="text" name="unneeded" value="trash">
+  <input type="submit">
+</form>
