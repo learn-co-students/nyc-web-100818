@@ -1,0 +1,5 @@
+<h1> Index . </h1>
+
+<% @gratitudes.each do |g| %>
+  <%= link_to "see all the wizard s", show_path(g.id) %>
+<% end %>

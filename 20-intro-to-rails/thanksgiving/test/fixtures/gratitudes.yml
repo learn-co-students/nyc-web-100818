@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sincere: false
+  message: MyString
+  level: 1
+  whomst: MyString
+
+two:
+  sincere: false
+  message: MyString
+  level: 1
+  whomst: MyString
