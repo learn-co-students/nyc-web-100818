@@ -1,0 +1,20 @@
+<h1>Let's Make Some Zaaaaas</h1>
+
+<form action="/pizzas" method="POST">
+  <label>What's the Name?</label>
+  <input type="text" name="pizza[name]" placeholder="Pizza Name">
+  <br>
+  <br>
+  <label>What's the Price?</label>
+  <input type="number" name="pizza[price]" placeholder="$$$$$$$$">
+  <br>
+  <br>
+  <label>What's the Size?</label>
+  <input type="text" name="pizza[size]" placeholder="Wasdasize">
+  <br>
+  <br>
+  <label>What YOU Want ON It?</label>
+  <input type="text" name="pizza[topping]" placeholder="Whatchuwantonit">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit">
+</form>

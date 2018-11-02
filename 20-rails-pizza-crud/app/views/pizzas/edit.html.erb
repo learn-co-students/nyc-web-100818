@@ -1,0 +1,21 @@
+<h1>Change Your Zaaaaas</h1>
+
+<form action="/pizzas/<%= @pizza.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <label>What's the New Name?</label>
+  <input type="text" name="pizza[name]" value="<%= @pizza.name %>">
+  <br>
+  <br>
+  <label>What's the New Price?</label>
+  <input type="number" name="pizza[price]" value="<%= @pizza.price %>">
+  <br>
+  <br>
+  <label>What's the New Size?</label>
+  <input type="text" name="pizza[size]" value="<%= @pizza.size %>">
+  <br>
+  <br>
+  <label>What YOU Want ON It Instead?</label>
+  <input type="text" name="pizza[topping]" value="<%= @pizza.topping %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit">
+</form>

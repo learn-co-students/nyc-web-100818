@@ -1,0 +1,11 @@
+<h1>This is Your Pizza: <%= @pizza.name %></h1>
+
+<h4>Toppings: <%= @pizza.topping %></h4>
+<h4>Price: <%= @pizza.price %></h4>
+<h4>Size: <%= @pizza.size %></h4>
+
+<form action="/pizzas/<%= @pizza.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="ANNHILATE ME">
+</form>
