@@ -1,0 +1,9 @@
+<h1> 🎉 🎁 </h1>
+
+
+<% @parties.each do |party| %>
+  <%= link_to party.theme, party %>
+  <%= link_to "edit the party", edit_party_path(party) %>
+  <%= link_to "DELETE!", party_path(party), method: :delete %>
+  </br>
+<% end %>

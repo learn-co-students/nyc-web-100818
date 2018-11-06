@@ -1,0 +1,23 @@
+<h1> NEW form for kid object</h1>
+
+
+<%= form_for @kid do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :present %>
+  <%= f.text_field :present %>
+  <%= f.label :party_id %>
+  <!--
+first arg is method we want to call on @kid (:party_id)  THE KEY🔑 for my Params,
+the collection we want to use to populate the dropdown(Party.all || @parties which is a reference from the controller to be Party.all),
+the value we want in our params: Party#id,
+what do we want to display in the tag itself? Party#theme
+-->
+  <%= f.collection_select(:party_id, @parties, :id, :theme) %>
+
+  <%= f.submit %>
+
+<% end %>
