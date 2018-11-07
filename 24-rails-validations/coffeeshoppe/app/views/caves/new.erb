@@ -1,0 +1,21 @@
+<h1> new Cave/Coffë ?</h1>
+
+
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error| %>
+    <li> <%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @coffee do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.label :caffy %>
+  <%= f.check_box :caffy %>
+  <%= f.submit %>
+<% end %>
