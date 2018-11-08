@@ -1,0 +1,16 @@
+<h1> <%= @user.name %> </h1>
+
+<ul>
+  <li>you are <%= @user.age %> years old</li>
+  <li>genius?? <%= @user.genius %></li>
+  <li>personality is <%= @user.personality %></li>
+</ul>
+
+alll of MYYYY regrets
+<ul>
+  <% @user.regrets.each do |regret| %>
+    <li> <%= link_to regret.name, regret %></li>
+  <% end %>
+</ul>
+<%= link_to "OBLITERATE", user_path(@user), method: :delete %>
+<div><%= link_to "edit", edit_user_path(@user) %></div>

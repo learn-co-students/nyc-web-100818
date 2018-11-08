@@ -1,0 +1,16 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %><br>
+
+  <%= f.label :personality %>
+  <%= f.text_field :personality %><br>
+
+  <%= f.label :genius %>
+  <%= f.check_box :genius %><br>
+
+  <%= f.submit %>
+
+<% end %>
