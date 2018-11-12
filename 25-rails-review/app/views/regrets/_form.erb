@@ -1,0 +1,12 @@
+<%= form_for @regret do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :painful %>
+  <%= f.text_field :painful %>
+  <%= f.label :level %>
+  <%= f.number_field :level %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name %>
+  <%= f.submit %>
+<% end %>

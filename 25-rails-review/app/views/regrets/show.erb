@@ -1,0 +1,10 @@
+<h1>SHOW THE REGRET PAGE</h1>
+
+<ul>
+  <li>name: <%= @regret.name %></li>
+  <li>painful??: <%= @regret.painful %></li>
+  <li>level: <%= @regret.level %></li>
+</ul>
+
+<div><%= link_to "edit", edit_regret_path(@regret) %></div>
+<div>WHO DO I BELONG TO? <%= link_to @regret.user.name, user_path(@regret.user) %></div>
