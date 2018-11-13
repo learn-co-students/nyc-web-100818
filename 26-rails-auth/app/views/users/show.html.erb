@@ -1,1 +1,10 @@
 <h1>Profile Page for <%= @user.username %></h1>
+
+<h2><%= flash[:notice] %></h2>
+
+
+<%=
+  if current_user.id == @user.id
+    button_to 'Delete This Profile', user_path(@user), { method: :delete }
+  end
+%>
