@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   def create #POST request to /users FOR SIGNUP
     @user = User.create(user_params) # User.create is a method on our MODEL which will encrypt and store the user's plaintext password
-    redirect_to @user
+    if @user.valid?
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   private

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates :username, uniqueness: { case_sensitive: false }
   has_secure_password # RAILS MAGIC WOW OMG WUT (comes from ActiveModel)
   #as a reminder, ActiveRecord provides getters and setters for the attributes specified by our schema
   # therefore, we have getters/setters for username and password_digest
