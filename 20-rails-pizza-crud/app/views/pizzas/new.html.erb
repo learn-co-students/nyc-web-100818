@@ -1,20 +1,25 @@
 <h1>Let's Make Some Zaaaaas</h1>
 
-<form action="/pizzas" method="POST">
-  <label>What's the Name?</label>
-  <input type="text" name="pizza[name]" placeholder="Pizza Name">
+<%= form_tag pizzas_path do %>
+  <%= label_tag "pizza[name]", "What's the Name?" %>
+  <br>
+  <%= text_field_tag "pizza[name]", nil, placeholder: "Pizza Name" %>
   <br>
   <br>
-  <label>What's the Price?</label>
-  <input type="number" name="pizza[price]" placeholder="$$$$$$$$">
+  <%= label_tag "pizza[price]", "What's the Price?"%>
+  <br>
+  <%= number_field_tag "pizza[price]", nil, placeholder: "$$$$$$$$$" %>
   <br>
   <br>
-  <label>What's the Size?</label>
-  <input type="text" name="pizza[size]" placeholder="Wasdasize">
+  <%= label_tag "pizza[size]", "What's the Size?"%>
+  <br>
+  <%= text_field_tag "pizza[size]", nil, placeholder: "Wasdasize" %>
   <br>
   <br>
-  <label>What YOU Want ON It?</label>
-  <input type="text" name="pizza[topping]" placeholder="Whatchuwantonit">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="submit">
-</form>
+  <%= label_tag "pizza[topping]", "What YOU Want ON It?"%>
+  <br>
+  <%= text_field_tag "pizza[topping]", nil, placeholder: "Whatchuwantonit" %>
+  <br>
+  <br>
+  <%= submit_tag "Make a Za" %>
+<% end %>

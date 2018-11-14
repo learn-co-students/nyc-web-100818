@@ -1,0 +1,46 @@
+<br>
+<br>
+<div class="ui breadcrumb">
+  <a href="/">Home</a>
+  <div class="divider"> / </div>
+  <a href="/pizzas"><%= image_tag "calzone.png", alt: "saajid" %></a>
+  <div class="divider"> / </div>
+  <div class="active section">Create a Pizza</div>
+</div>
+<br>
+<br>
+
+<div class="ui three column grid">
+  <!-- first column -->
+  <div class="column"></div>
+
+  <!-- second column -->
+  <div class="column">
+    <%= form_tag pizzas_path, class: "ui form" do %>
+      <%= label_tag "pizza[name]", "What's the Name?" %>
+      <br>
+      <%= text_field_tag "pizza[name]", nil, placeholder: "Pizza Name" %>
+      <br>
+      <br>
+      <%= label_tag "pizza[price]", "What's the Price?"%>
+      <br>
+      <%= number_field_tag "pizza[price]", nil, placeholder: "$$$$$$$$$" %>
+      <br>
+      <br>
+      <%= label_tag "pizza[size]", "What's the Size?"%>
+      <br>
+      <%= text_field_tag "pizza[size]", nil, placeholder: "Wasdasize" %>
+      <br>
+      <br>
+      <%= label_tag "pizza[topping]", "What YOU Want ON It?"%>
+      <br>
+      <%= text_field_tag "pizza[topping]", nil, placeholder: "Whatchuwantonit" %>
+      <br>
+      <br>
+      <%= submit_tag "Make a Za", class: "ui button" %>
+    <% end %>
+  </div>
+
+  <!-- third column -->
+  <div class="column"></div>
+</div>

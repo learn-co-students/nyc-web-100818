@@ -20,11 +20,9 @@ Rails.application.routes.draw do
   # get '/pizzas/:id/edit', to: "pizzas#edit", as: "edit_pizza"
   # # pizzas#update
   # patch '/pizzas/:id', to: "pizzas#update"
-  
+
   # # Destroy
   # # pizzas#destroy
   # delete '/pizzas/:id', to: "pizzas#destroy"
-
-  get '/', to: "welcome#home"
   resources :pizzas
 end

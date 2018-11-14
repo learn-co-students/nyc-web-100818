@@ -1,0 +1,7 @@
+<h1>Welcome to Our Friday Pizza Party!</h1>
+
+<ul>
+  <% @pizzas.each do |pizza| %>
+    <li><%= link_to pizza.name, pizza %> | $<%= pizza.price %>.00!!</li>
+  <% end %>
+</ul>
