@@ -10,7 +10,7 @@
 
 ---
 
-## What are JavaScript Events 🤔
+## What are Web Events 🤔
 
 - "In the case of the Web, events are fired inside the _browser window_, and tend to be attached to a specific item that resides in it — this might be a single HTML element, set of HTML elements, the HTML document loaded in the current tab, or the entire browser window. There are a lot of different types of events that can occur, for example:
 
