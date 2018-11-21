@@ -9,4 +9,4 @@ console.log('Starting the sleep function')
 sleep(10)
 console.log('Wow that sleep function took forever to run. 1 Star 🌟')
 
-document.querySelector('#click-button').addEventListener('click', console.log)
+document.getElementById('click-button').addEventListener('click', console.log)
