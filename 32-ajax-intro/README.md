@@ -184,20 +184,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
 
 ## Challenge
 
-Starting with a file `index.js` with:
-
-```js
-const url = "https://dog.ceo/api/breeds/image/random/4"
-```
-
-and a standard `index.html` that loads the `index.js`
-
-Add javascript so that
-- on page load
-- fetch the images
-- parse the response as json
-- add image elements to the DOM for each image in the array
-
+Take a look at the Dog CEO Challenge lab on Learn: `The Web -> Accessing Remote APIs with JavaScript -> Fetch Intro Dog CEO Challenge`
 ---
 
 ## External Resources
