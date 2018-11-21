@@ -184,7 +184,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
 
 ## Challenge
 
-Take a look at the Dog CEO Challenge lab on Learn: `The Web -> Accessing Remote APIs with JavaScript -> Fetch Intro Dog CEO Challenge`
+- Take a look at the Dog CEO Challenge lab on Learn: `The Web -> Accessing Remote APIs with JavaScript -> Fetch Intro Dog CEO Challenge`
 ---
 
 ## External Resources
