@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(e) {
+  const dataStore = { images: [] }
   const imagesDiv = document.getElementById('images')
   const newPostForm = document.getElementById('new-post-form')
   // const imagesDiv = document.getQuerySelector('#images')
@@ -13,12 +14,19 @@ document.addEventListener('DOMContentLoaded', function(e) {
         .then(r => r.json())
         .then(newImgJSON => { //JSON representing the newly created img
           console.log(newImgJSON)
+          dataStore.images.push(newImgJSON)
           imagesDiv.innerHTML += renderSingleImage(newImgJSON)
         })
     } else if (e.target.dataset.action === 'edit') { //form is in 'edit' mode
       editImage(e.target.dataset.id, newPostTitle, newPostUrl)
         .then(r => r.json())
         .then((updatedImg) => {
+          let foundImgIdx = dataStore.images.findIndex((img) => img.id === updatedImg.id)
+          console.log(foundImgIdx)
+          console.log('%c BEFORE UPDATE: ', 'color: red', dataStore.images[foundImgIdx])
+          dataStore.images[foundImgIdx] = updatedImg
+          console.log('%c AFTER UPDATE: ', 'color: green', dataStore.images[foundImgIdx])
+          console.log(dataStore)
           const targetImgDiv = document.getElementById(`image-${updatedImg.id}`)
           targetImgDiv.querySelector('.post-header').innerText = updatedImg.title
           targetImgDiv.querySelector('.post-img').src = updatedImg.url
@@ -39,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
       //   newImgTag.src = image.url
       //   imagesDiv.appendChild(newImgTag)
       // })
+      dataStore.images = parsedJSONResponseImageArray
+      console.log(dataStore)
       imagesDiv.innerHTML = renderAllImages(parsedJSONResponseImageArray)
       // take this array of data and create dom nodes
     })
@@ -58,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function(e) {
           newPostForm.dataset.action = 'edit' //set the form to edit 'mode' because the user clicked the edit button
           newPostForm.dataset.id = clickedImageId //save the id of the clicked img in a dataset
         })
+    } else if (e.target.className === 'delete') {
+      deleteImg(e.target.dataset.id)
+      document.getElementById(`image-${e.target.dataset.id}`).remove()
+      console.log(typeof e.target.dataset.id)
+      console.log(typeof dataStore.images[0].id)
+      const updatedImgStore = dataStore.images.filter(img => img.id != e.target.dataset.id)
+      dataStore.images = updatedImgStore
+      console.log('user clicked delte', e.target)
     }
   })
 })
@@ -65,47 +83,3 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
 
 // TODO: move these to another file for render helper fns
-function renderSingleImage(imageObj) {
-  return `
-        <div id="image-${imageObj.id}">
-          <h1 class="post-header">${imageObj.title}</h1>
-          <button class="edit" data-action="edit" data-id="${imageObj.id}">Edit</button>
-          <img class="post-img" src="${imageObj.url}">
-          <hr>
-        </div>
-  `
-}
-
-function renderAllImages(imageArray) {
-  return imageArray.map(renderSingleImage).join('')
-}
-
-
-function editImage(id, title, url) {
-  return fetch(`http://localhost:3000/images/${id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      title: title,
-      url: url
-    })
-  }) //id stored in the form itself
-
-}
-
-function createImage(title, url) {
-  return fetch('http://localhost:3000/images', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json', //data we are sending to the server
-      'Accept': 'application/json' //data type we want back from the server
-    },
-    body: JSON.stringify({
-      title: title,
-      url: url
-    })
-  })
-}
