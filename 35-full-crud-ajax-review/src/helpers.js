@@ -19,7 +19,7 @@ function getAllImageData() {
 }
 
 function getSingleImageData(imageId) {
-  return fetch(`http://localhost:3000/images/${imageId}`)
+  return fetch(`http://localhost:3000/images/${imageId}`, { method: 'GET' })
 }
 
 function editImage(id, title, url) {
