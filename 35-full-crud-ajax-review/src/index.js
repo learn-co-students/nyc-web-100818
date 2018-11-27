@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
   // const imagesDiv = document.getQuerySelector('#images')
 
   newPostForm.addEventListener('submit', function(e) {
-    e.preventDefault()
     const newPostTitle = e.target.querySelector('#new-post-title').value
     // const newPostTitle = document.getElementById('new-post-title').value
     const newPostUrl = e.target.querySelector('#new-post-url').value
@@ -61,51 +60,3 @@ document.addEventListener('DOMContentLoaded', function(e) {
     }
   })
 })
-
-
-
-// TODO: move these to another file for render helper fns
-function renderSingleImage(imageObj) {
-  return `
-        <div id="image-${imageObj.id}">
-          <h1 class="post-header">${imageObj.title}</h1>
-          <button class="edit" data-action="edit" data-id="${imageObj.id}">Edit</button>
-          <img class="post-img" src="${imageObj.url}">
-          <hr>
-        </div>
-  `
-}
-
-function renderAllImages(imageArray) {
-  return imageArray.map(renderSingleImage).join('')
-}
-
-
-function editImage(id, title, url) {
-  return fetch(`http://localhost:3000/images/${id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      title: title,
-      url: url
-    })
-  }) //id stored in the form itself
-
-}
-
-function createImage(title, url) {
-  return fetch('http://localhost:3000/images', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json', //data we are sending to the server
-      'Accept': 'application/json' //data type we want back from the server
-    },
-    body: JSON.stringify({
-      title: title,
-      url: url
-    })
-  })
-}

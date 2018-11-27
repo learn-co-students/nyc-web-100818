@@ -14,6 +14,13 @@ function renderAllImages(imageArray) {
   return imageArray.map(renderSingleImage).join('')
 }
 
+function getAllImageData() {
+  return fetch('http://localhost:3000/images', { method: 'GET' })
+}
+
+function getSingleImageData(imageId) {
+  return fetch(`http://localhost:3000/images/${imageId}`)
+}
 
 function editImage(id, title, url) {
   return fetch(`http://localhost:3000/images/${id}`, {
