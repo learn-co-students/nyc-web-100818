@@ -5,22 +5,18 @@ function iHateLaGuardia() {
   console.log(this.name)
 }
 
-iHateLaGuardia()
+iHateLaGuardia() // 'window object'
 
 const button = document.getElementById('button')
 
 button.addEventListener('click', function() {
-  console.log(this)
+  console.log(this) //button
 })
 
 
-// button.addEventListener('click', () => console.log(this))
+// button.addEventListener('click', () => console.log(this)) //window
 
 
-
-// document.getElementById('button').addEventListener('click', () => {
-//   console.log(this)
-// })
 
 /********************************************************/
 
@@ -34,6 +30,8 @@ const laptop = {
     console.log(`I am a ${this.color} ${this.name} computer`)
   }
 }
+
+laptop.sayName() // i am a silver macbook computer
 
 const dog = {
   name: 'winfield',
@@ -55,9 +53,11 @@ const dog = {
   }
 }
 
-const alsoBark = dog.bark
+const alsoBark = dog.bark //creates another pointer to the dog.bark fn
 
-dog.bark()
+alsoBark === dog.bark // true
+
+dog.bark() //My name is winfield and i love 2 bark! WOOF WOOF!
 
 const pencil = {
   color: 'blue',
@@ -65,6 +65,8 @@ const pencil = {
     console.log(`I am a ${this.color} pencil and i like 2 write`)
   }
 }
+
+pencil.write() // I am a blue pencil and i like 2 write
 
 /********************************************************/
 
@@ -89,7 +91,8 @@ const person = {
 
 const bound2BoneSaw = lunch.bind(person) //returns a BOUND copy of our fn
 
-bound2BoneSaw('slim jim', 'baklava')
+lunch.bind(person)('slim jim', 'baklava') // randy savage is super duper hungry for slim jim and baklava
+bound2BoneSaw('slim jim', 'baklava') // randy savage is super duper hungry for slim jim and baklava
 
 // both call and apply execute AND bind a function to an object
 lunch.call(person, 'pizza', 'nachos')
