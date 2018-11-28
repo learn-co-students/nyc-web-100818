@@ -12,7 +12,7 @@
   - Create objects using `new` and `Constructor` functions
   - `new` vs Object.create
 - **How we will likely use it?**
-  - Classes (syntactic sugar on the `prototype chain` )
+  - Classes (syntactic sugar on the `prototype chain`)
   - Refactor constructor to adopt the class syntax
 
 ---
