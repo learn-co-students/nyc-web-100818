@@ -1,0 +1,38 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "name": "WHEN I SAY FLAT, U SAY IRONSCHOOL! FLAT......IRONSCHOOL",
+      "tasks": {
+        "content": "hi"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "listId": 1,
+      "content": "will this work?"
+    },
+    {
+      "listId": 1,
+      "content": "when i say flat",
+      "id": 2
+    },
+    {
+      "listId": 1,
+      "content": "u say iron school",
+      "id": 3
+    },
+    {
+      "listId": 1,
+      "content": "flat",
+      "id": 4
+    },
+    {
+      "listId": 1,
+      "content": "ironschool",
+      "id": 5
+    }
+  ]
+}
