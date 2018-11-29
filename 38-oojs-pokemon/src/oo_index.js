@@ -1,20 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const domController = new DOMController
+  const domController = new DOMController //find dom nodes we care about and attach event listeners
   const pokeAdapter = new JSONAPIAdapter('http://localhost:3000/pokemon')
-  pokeAdapter.getAll()
+  pokeAdapter.getAll() //helper method to send a GET request to http://localhost:3000/pokemon
     .then(resp => {
-      if (resp.ok) {
-        return resp.json()
+      if (resp.ok) { // HTTP status code < 400
+        return resp.json() //parse json and return it so we can access it in the next `.then` callback fn
       }
     })
     .then(parsedPokeJSON => {
-      parsedPokeJSON.forEach(singlePoke => new Pokemon(singlePoke))
-      domController.appendAllPokemonToPage(Pokemon.renderAllPokemon())
-      // const ivy = new Pokemon(parsedPokeJSON[0])
-      // domController.appendAllPokemonToPage(ivy.render())
-      // domController.appendPokemonToPage(someHTMLString)
-      // document.getElementById('pokemon-container').innerHTML += ivy.render()
+      parsedPokeJSON.forEach(singlePoke => new Pokemon(singlePoke)) //instantiate poke instances
+      domController.appendAllPokemonToPage(Pokemon.renderAllPokemon()) //add those poke instances to the page
     })
-
-    // pokeAdapter.getSingleItem(25).then(r => r.json()).then(console.log)
 })
