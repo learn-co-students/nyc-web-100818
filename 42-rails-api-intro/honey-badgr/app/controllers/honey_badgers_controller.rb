@@ -17,13 +17,13 @@ class HoneyBadgersController < ApplicationController
   end
 
   # GET /honey_badgers/new
-  def new
-    @honey_badger = HoneyBadger.new
-  end
+  # def new
+  #   @honey_badger = HoneyBadger.new
+  # end
 
   # GET /honey_badgers/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /honey_badgers
   # POST /honey_badgers.json
