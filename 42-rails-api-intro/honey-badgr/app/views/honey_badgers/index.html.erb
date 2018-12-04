@@ -16,6 +16,7 @@
       <tr>
         <td><%= honey_badger.name %></td>
         <td><%= honey_badger.weight %></td>
+        <td><img height="100" width="100" src="<%= honey_badger.img %>"/></td>
         <td><%= link_to 'Show', honey_badger %></td>
         <td><%= link_to 'Edit', edit_honey_badger_path(honey_badger) %></td>
         <td><%= link_to 'Destroy', honey_badger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
