@@ -89,5 +89,8 @@ function oneReduce(data) {
   return data.reduce(calculateRowDiff, 0)
 }
 
-
 console.log(oneReduce(data))
+
+const oneLinr = (data) => data.reduce(calculateRowDiff, 0)
+
+console.log(oneLinr(data))
