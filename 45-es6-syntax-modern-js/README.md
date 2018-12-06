@@ -85,6 +85,29 @@ const noEvans = names.slice(1)
 const removedEvans = names.filter(name => name !== 'evans')
 ```
 
+- DIY Filter
+
+```js
+Array.prototype.myFilter = function(callback) {
+  const filtered = []
+
+  for (let i = 0; i < this.length; i++) {
+    const currentArrayElement = this[i]
+    if (callback(currentArrayElement)) {
+      filtered.push(currentArrayElement)
+    }
+  }
+  return filtered
+}
+
+
+Array.prototype.monkeyPatch = '🙈'
+
+
+[].filter
+
+```
+
 ---
 
 #### all the forms of arrow functions
@@ -116,6 +139,11 @@ const dog = {
     // this is dog
     this.favSnacks.forEach(s => {
       console.log(`${this.name} likes ${s}`)
+    })
+  },
+  sayFavFoodsNoArrow: function() {
+    this.favSnacks.forEach(function(snack) {
+      console.log(`${this.name} likes ${snack}`)
     })
   }
 }
