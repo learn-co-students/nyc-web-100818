@@ -1,0 +1,1 @@
+This project was created to exemplify the concepts presented in the [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) piece from the React documentation. 
