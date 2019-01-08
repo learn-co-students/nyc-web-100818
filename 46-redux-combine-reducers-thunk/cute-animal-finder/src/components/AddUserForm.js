@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addUserAction } from '../redux/actions';
 
 class AddUserForm extends Component {
+  // Depends
   state = {
     name: "",
     email: "",

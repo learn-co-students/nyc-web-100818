@@ -4,6 +4,7 @@ import './assets/css/pure-min.css';
 import './assets/css/index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
